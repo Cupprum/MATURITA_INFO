@@ -15,15 +15,15 @@ class Ball:
         if direction == 'down':
             if y > 0:
                 self.canvas.move(self.ball, 0, 1)
-                self.canvas.after(20, self.move, y - 1, 50, 'down')
+                self.canvas.after(5, self.move, y - 1, maximum, 'down')
             elif y == 0:
-                self.canvas.after(20, self.move, y, int(50 * 0.8), 'up')
+                self.canvas.after(5, self.move, y, int(maximum * 0.8), 'up')
         elif direction == 'up':
             if y < maximum:
                 self.canvas.move(self.ball, 0, -1)
-                self.canvas.after(20, self.move, y + 1, 50, 'up')
+                self.canvas.after(5, self.move, y + 1, maximum, 'up')
             elif y == maximum:
-                self.canvas.after(20, self.move, y, maximum, 'down')
+                self.canvas.after(5, self.move, y, maximum, 'down')
 
 
 root = Tk()
