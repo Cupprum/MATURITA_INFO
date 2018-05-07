@@ -3,7 +3,11 @@ from tkinter import *
 import random
 
 
-def start_game(dic_numbers, counter, rounds_left, player1, player2):
+def start_game(dic_numbers, counter, rounds_left, random_1, random_2):
+    player1 = random_1.get()
+    player2 = random_2.get()
+    rounds_left = rounds_left.get()
+
     if player1 > player2:
         dic_numbers['p1'] += 1
         dic_numbers['p2'] -= 1
@@ -46,9 +50,9 @@ score_var_round.set(0)
 score_var_rounds_left = IntVar()
 score_var_rounds_left.set(0)
 
-random_1 = Int()
+random_1 = IntVar()
 random_1.set(0)
-random_2 = Int()
+random_2 = IntVar()
 random_2.set(0)
 
 dic_numbers = {'p1': 0, 'p2': 0}
@@ -59,7 +63,7 @@ p1_name.grid(column=0, row=0)
 p1_score = tk.Label(root, textvariable=score_var_p1)
 p1_score.grid(column=0, row=1)
 p1_button = tk.Button(root, text='STOP',
-                      command=random_1.set(random.randint(1, 21)))
+                      command=lambda random_1: random_1.set(random.randint(1, 21)))
 p1_button.grid(column=0, row=2)
 p1_actual_text = tk.Label(root, text='actual number')
 p1_actual_text.grid(column=0, row=3)
@@ -71,7 +75,7 @@ p2_name.grid(column=1, row=0)
 p2_score = tk.Label(root, textvariable=score_var_p2)
 p2_score.grid(column=1, row=1)
 p2_button = tk.Button(root, text='STOP',
-                      command=random_2.set(random.randint(1, 21)))
+                      command=lambda random_2: random_2.set(random.randint(1, 21)))
 p2_button.grid(column=1, row=2)
 
 p2_actual_text = tk.Label(root, text='actual number')
@@ -96,7 +100,11 @@ set_number_rounds_button.grid(column=3, row=1)
 
 start_round = tk.Button(root, text='Start',
                         command=lambda: start_game(
-                            dic_numbers, counter, score_var_rounds_left, int(random_1), int(random_2)))
+                            dic_numbers,
+                            counter,
+                            score_var_rounds_left,
+                            random_1,
+                            random_2))
 start_round.grid(column=3, row=2)
 
 root.update_idletasks()
