@@ -1,16 +1,9 @@
 import tkinter as tk
 from tkinter import *
 import random
-import time
 
 
-def whole_game(dic_numbers, counter):
-    player1 = random.randint(1, 21)
-    print(f'p1: {player1}')
-
-    player2 = random.randint(1, 21)
-    print(f'p2: {player2}')
-
+def start_game(dic_numbers, counter, rounds_left, player1, player2):
     if player1 > player2:
         dic_numbers['p1'] += 1
         dic_numbers['p2'] -= 1
@@ -24,48 +17,88 @@ def whole_game(dic_numbers, counter):
         dic_numbers['p2'] += 0.5
 
     counter += 1
+    rounds_left -= 1
 
     score_var_p1.set(str(dic_numbers['p1']))
     score_var_p2.set(str(dic_numbers['p2']))
-    score_var_round.set(str(counter))
+    score_var_round.set(counter)
+    score_var_rounds_left.set(rounds_left)
 
-    time.sleep(2)
+    root.update_idletasks()
+
+
+def set_rounds():
+    score_var_rounds_left.set(set_number_rounds_entry.get())
     root.update_idletasks()
 
 
 root = Tk()
 root.title("GAME")
-root.geometry('200x200')
-
-dic_numbers = {'p1': 0, 'p2': 0}
-counter = 0
+root.geometry('400x200')
 
 score_var_p1 = StringVar()
 score_var_p1.set('')
 score_var_p2 = StringVar()
 score_var_p2.set('')
-score_var_round = StringVar()
-score_var_round.set('')
 
+score_var_round = IntVar()
+score_var_round.set(0)
+score_var_rounds_left = IntVar()
+score_var_rounds_left.set(0)
+
+random_1 = Int()
+random_1.set(0)
+random_2 = Int()
+random_2.set(0)
+
+dic_numbers = {'p1': 0, 'p2': 0}
+counter = 0
 
 p1_name = tk.Label(root, text='p1')
 p1_name.grid(column=0, row=0)
 p1_score = tk.Label(root, textvariable=score_var_p1)
 p1_score.grid(column=0, row=1)
+p1_button = tk.Button(root, text='STOP',
+                      command=random_1.set(random.randint(1, 21)))
+p1_button.grid(column=0, row=2)
+p1_actual_text = tk.Label(root, text='actual number')
+p1_actual_text.grid(column=0, row=3)
+p1_actual_var = tk.Label(root, textvariable=random_1)
+p1_actual_var.grid(column=0, row=4)
 
 p2_name = tk.Label(root, text='p2')
 p2_name.grid(column=1, row=0)
 p2_score = tk.Label(root, textvariable=score_var_p2)
 p2_score.grid(column=1, row=1)
+p2_button = tk.Button(root, text='STOP',
+                      command=random_2.set(random.randint(1, 21)))
+p2_button.grid(column=1, row=2)
+
+p2_actual_text = tk.Label(root, text='actual number')
+p2_actual_text.grid(column=1, row=3)
+p2_actual_var = tk.Label(root, textvariable=random_2)
+p2_actual_var.grid(column=1, row=4)
 
 round_name = tk.Label(root, text='round')
 round_name.grid(column=2, row=0)
 round_score = tk.Label(root, textvariable=score_var_round)
 round_score.grid(column=2, row=1)
 
-root.update_idletasks()
+rounds_left = tk.Label(root, text='rounds left')
+rounds_left.grid(column=2, row=2)
+rounds_left_score = tk.Label(root, textvariable=score_var_rounds_left)
+rounds_left_score.grid(column=2, row=3)
 
-for x in range(5):
-    whole_game(dic_numbers, counter)
+set_number_rounds_entry = tk.Entry(root, width=9)
+set_number_rounds_entry.grid(column=3, row=0)
+set_number_rounds_button = tk.Button(root, text='Potvrdit', command=set_rounds)
+set_number_rounds_button.grid(column=3, row=1)
+
+start_round = tk.Button(root, text='Start',
+                        command=lambda: start_game(
+                            dic_numbers, counter, score_var_rounds_left, int(random_1), int(random_2)))
+start_round.grid(column=3, row=2)
+
+root.update_idletasks()
 
 root.mainloop()
