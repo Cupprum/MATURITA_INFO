@@ -1,7 +1,6 @@
 import tkinter as tk
 from tkinter import *
 import random
-import time
 
 
 def start_game(dic_numbers, counter, rounds_left, random_1, random_2):
@@ -34,11 +33,6 @@ def start_game(dic_numbers, counter, rounds_left, random_1, random_2):
 
 def set_rounds():
     score_var_rounds_left.set(set_number_rounds_entry.get())
-    root.update_idletasks()
-
-
-def blbost(random_1):
-    random_1.set(random.randint(1, 21))
     root.update_idletasks()
 
 
