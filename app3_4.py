@@ -42,16 +42,9 @@ def blbost(random_1):
     root.update_idletasks()
 
 
-def start_round_p1(random_1):
-    global bezkaj
-    bezkaj = True
-
-    while bezkaj:
-        root.after(1000, blbost(random_1))
-
-
-def stop_round_p1():
-    bezkaj = False
+def new_round_p1(random_1):
+    random_1.set(random.randint(1, 21))
+    root.update_idletasks()
 
 
 def new_round_p2(random_2):
@@ -86,7 +79,7 @@ p1_name.grid(column=0, row=0)
 p1_score = tk.Label(root, textvariable=score_var_p1)
 p1_score.grid(column=0, row=1)
 p1_button_start = tk.Button(root, text='Start',
-                            command=lambda: start_round_p1(random_1))
+                            command=lambda: new_round_p1(random_1))
 p1_button_start.grid(column=0, row=2)
 p1_actual_text = tk.Label(root, text='actual number')
 p1_actual_text.grid(column=0, row=3)
