@@ -32,6 +32,23 @@ for x in range(len(list_square)):
     counter += 1
 
 for x in dic_final.values():
-    for y in x:
-        print(y)
-    print('\n')
+
+    maximum_y = 0
+    maximum_y_value = 0
+
+    for y in range(len(x)):
+        if max(x[y]) > maximum_y_value:
+            maximum_y = y + 1
+            maximum_y_value = max(x[y])
+        print(x[y])
+
+    counter = 1
+
+    for y in x[maximum_y - 1]:
+        if y == maximum_y_value:
+            break
+        counter += 1
+
+    print(f"stlpec {counter}")
+    print(f"riadok {maximum_y}")
+    print(f"maximum_y_value {maximum_y_value}")
