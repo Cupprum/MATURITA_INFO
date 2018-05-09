@@ -20,16 +20,18 @@ class Polygon:
         cangle = cmath.exp(math.radians(-alfa) * 1j)
         center = complex(x1, y2)
 
-        v = cangle * (complex(x2, y2) - center) + center
+        pd = cangle * (complex(x2, y2) - center) + center
+        ph = cangle * (complex(x2, y1) - center) + center
+        lh = cangle * (complex(x1, y1) - center) + center
 
         self.x1 = x1
         self.y1 = y2
-        self.x2 = v.real
-        self.y2 = v.imag
-        self.x3 = 0
-        self.y3 = 0
-        self.x4 = 0
-        self.y4 = 0
+        self.x2 = pd.real
+        self.y2 = pd.imag
+        self.x3 = ph.real
+        self.y3 = ph.imag
+        self.x4 = lh.real
+        self.y4 = lh.imag
 
         self.canvas = canvas
         self.polygon = canvas.create_polygon(self.x1, self.y1,
