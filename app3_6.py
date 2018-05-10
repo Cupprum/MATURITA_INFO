@@ -1,6 +1,7 @@
 from tkinter import *
 import tkinter as tk
-import cmath, math
+import cmath
+import math
 
 
 class Rectangle:
