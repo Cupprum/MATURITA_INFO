@@ -53,7 +53,7 @@ def everything():
                        relief="solid")
     canvas.grid()
 
-    txt = open('../ZADANIA/Zadanie_6_Uloha_1.txt', 'r').readlines()
+    txt = open('../ZADANIA/VYBER_3/Zadanie_6_Uloha_1.txt', 'r').readlines()
 
     for x in txt:
         temporary = x.split(' ')

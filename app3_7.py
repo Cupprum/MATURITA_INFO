@@ -1,4 +1,4 @@
-txt = open('../ZADANIA/Zadanie_7_Uloha_1.txt', 'r').readlines()
+txt = open('../ZADANIA/VYBER_3/Zadanie_7_Uloha_1.txt', 'r').readlines()
 
 list_square = []
 list_actual_numbers = []

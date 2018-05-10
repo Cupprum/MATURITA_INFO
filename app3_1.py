@@ -1,4 +1,4 @@
-txt = open('../ZADANIA/Zadanie_1_Uloha_1.txt', 'r').readlines()
+txt = open('../ZADANIA/VYBER_3/Zadanie_1_Uloha_1.txt', 'r').readlines()
 list_possibilities = []
 
 for x in range(len(txt)):

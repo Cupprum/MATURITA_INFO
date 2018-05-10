@@ -1,4 +1,4 @@
-txt = open('../ZADANIA/Zadanie_3_Uloha_1.txt', 'r').readlines()
+txt = open('../ZADANIA/VYBER_3/Zadanie_3_Uloha_1.txt', 'r').readlines()
 
 day_list = []
 other_list = []

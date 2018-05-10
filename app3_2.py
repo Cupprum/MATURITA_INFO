@@ -1,5 +1,5 @@
-txt = open('../ZADANIA/Zadanie_2_Uloha_1.txt', 'r').readlines()
-code = open('../ZADANIA/Zadanie_2_Maska_1.txt', 'r').readlines()
+txt = open('../ZADANIA/VYBER_3/Zadanie_2_Uloha_1.txt', 'r').readlines()
+code = open('../ZADANIA/VYBER_3/Zadanie_2_Maska_1.txt', 'r').readlines()
 
 txt_list = []
 final_list = []
