@@ -71,6 +71,7 @@ def in_row(counter):
                           100 + counter,
                           200)
         counter += 100
+        print(circle)
 
     if counter < 800:
         trapeze = Lichobeznik(canvas,
@@ -83,6 +84,7 @@ def in_row(counter):
                               30 + counter,
                               100)
         counter += 100
+        print(trapeze)
 
     if counter < 800:
         triangel = Trojuholnik(canvas,
@@ -93,6 +95,7 @@ def in_row(counter):
                                50 + counter,
                                114)
         counter += 100
+        print(triangel)
 
     if counter < 800:
         in_row(counter)
