@@ -21,15 +21,19 @@ print(list_groups)
 print(list_animals_in_groups)
 
 for x in range(len(list_groups)):
-    groups_at_least = math.ceil(list_groups[x] / 2) + 1
+    groups_at_least = math.ceil(list_groups[x] / 2)
 
     actual_sorted = list_animals_in_groups[x]
     actual_sorted.sort()
     actual_sorted = actual_sorted[:groups_at_least]
 
-    del actual_sorted[0]
+    lit_min_votes = []
 
-    list_final.append(sum(actual_sorted))
+    for y in actual_sorted:
+        min_votes = math.ceil(y / 2)
+        lit_min_votes.append(min_votes)
+
+    list_final.append(sum(lit_min_votes) + 1)
 
 for x in list_final:
     print(x)
