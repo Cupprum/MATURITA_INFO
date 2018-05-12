@@ -12,8 +12,6 @@ except ImportError:
     import tkinter.ttk as ttk
     py3 = True
 
-import riesenie7_support
-
 
 def vp_start_gui():
     '''Starting point when module is the main routine.'''
