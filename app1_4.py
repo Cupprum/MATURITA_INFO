@@ -1,5 +1,5 @@
 # sequence = input('vvjjsskK')
-sequence = '1231'
+sequence = '1234'
 list_final = []
 
 '''
@@ -38,5 +38,4 @@ for x in range(counter):
     list_of_letters.append(list_of_letters[0])
     del list_of_letters[0]
 
-print(list_final)
 print(len(list_final))
