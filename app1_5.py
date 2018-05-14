@@ -25,6 +25,8 @@ for x in list_groups:
     list_dec = []
     for y in list_hex:
         list_dec.append(hex_to_dec(y))
-    list_dec_sorted = list_dec.sorted()
+    list_dec_sorted = list_dec[:]
+    list_dec_sorted.sort()
 
-    print(f"{list_dec} {list_dec_sorted}")
+    if list_dec == list_dec_sorted:
+        print(f"vporiadku {list_hex}")
