@@ -1,19 +1,28 @@
 from tkinter import *
 import tkinter as tk
+import random
+import time
 
 
-class Rectangle:
-    def __init__(self, canvas, act_rec):
+class Point:
+    def __init__(self, canvas, x, y, lst):
         self.canvas = canvas
 
-        self.x1 = act_rec[0]
-        self.y1 = act_rec[1]
-        self.x2 = act_rec[2]
-        self.y2 = act_rec[3]
+        self.x = x
+        self.y = y
 
-        self.rectangle = canvas.create_rectangle(self.x1, self.y1, self.x2,
-                                                 self.y2, fill="red")
+        if x > lst[0] and x < lst[2] and y > lst[1] and y < lst[3]:
+            self.color = 'green'
+        else:
+            self.color = 'red'
 
+        self.rectangle = canvas.create_rectangle(self.x, self.y,
+                                                 self.x + 1, self.y + 1,
+                                                 outline=self.color)
+        root.update_idletasks()
+
+
+repetition = int(input('kolko krat mame opakovat : '))
 
 txt = open('../ZADANIA/VYBER_1/uloha_7.txt').readlines()
 
@@ -29,11 +38,14 @@ root.resizable(False, False)
 canvas = tk.Canvas(root, width=640, height=480, borderwidth=2, relief="solid")
 canvas.grid()
 
-for x in list_rectangles:
-    act_rec = x.split(' ')
+for _ in range(repetition):
+    x = random.randint(0, 640)
+    y = random.randint(0, 480)
+
+    act_rec = list_rectangles[1].split(' ')
     act_rec = [int(x) for x in act_rec]
 
-    new_rectangle = Rectangle(canvas, act_rec)
-    print(new_rectangle)
+    new_rectangle = Point(canvas, x, y, act_rec)
+    time.sleep(0)
 
 root.mainloop()
