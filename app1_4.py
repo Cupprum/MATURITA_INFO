@@ -1,5 +1,5 @@
 # sequence = input('vvjjsskK')
-sequence = '12125'
+sequence = 'vvjjsskK'
 list_final = []
 
 '''
@@ -27,9 +27,30 @@ for _ in range(counter):
                 for _ in range(counter - 4):
                     str_final += list_of_letters[4]
 
-                    if str_final not in list_final:
-                        list_final.append(str_final)
+                    for _ in range(counter - 5):
+                        str_final += list_of_letters[5]
+
+                        for _ in range(counter - 6):
+                            str_final += list_of_letters[6]
+
+                            for _ in range(counter - 7):
+                                str_final += list_of_letters[7]
+
+                                if str_final not in list_final:
+                                    list_final.append(str_final)
+                                str_final = str_final[:-1]
+
+                            str_final = str_final[:-1]
+                            list_of_letters.append(list_of_letters[6])
+                            del list_of_letters[6]
+
+                        str_final = str_final[:-1]
+                        list_of_letters.append(list_of_letters[5])
+                        del list_of_letters[5]
+
                     str_final = str_final[:-1]
+                    list_of_letters.append(list_of_letters[4])
+                    del list_of_letters[4]
 
                 str_final = str_final[:-1]
                 list_of_letters.append(list_of_letters[3])
@@ -46,5 +67,4 @@ for _ in range(counter):
     list_of_letters.append(list_of_letters[0])
     del list_of_letters[0]
 
-print(list_final)
 print(len(list_final))
