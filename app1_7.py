@@ -1,82 +1,39 @@
-import sys
-
-try:
-    from Tkinter import *
-except ImportError:
-    from tkinter import *
-
-try:
-    import ttk
-    py3 = False
-except ImportError:
-    import tkinter.ttk as ttk
-    py3 = True
+from tkinter import *
+import tkinter as tk
 
 
-def vp_start_gui():
-    '''Starting point when module is the main routine.'''
-    global val, w, root
-    root = Tk()
-    top = New_Toplevel(root)
-    riesenie7_support.init(root, top)
-    root.mainloop()
+class Rectangle:
+    def __init__(self, canvas, act_rec):
+        self.canvas = canvas
+
+        self.x1 = act_rec[0]
+        self.y1 = act_rec[1]
+        self.x2 = act_rec[2]
+        self.y2 = act_rec[3]
+
+        self.rectangle = canvas.create_rectangle(self.x1, self.y1, self.x2,
+                                                 self.y2, fill="red")
 
 
-w = None
+txt = open('../ZADANIA/VYBER_1/uloha_7.txt').readlines()
 
+list_rectangles = []
 
-def create_New_Toplevel(root, *args, **kwargs):
-    '''Starting point when module is imported by another program.'''
-    global w, w_win, rt
-    rt = root
-    w = Toplevel(root)
-    top = New_Toplevel(w)
-    riesenie7_support.init(w, top, *args, **kwargs)
-    return (w, top)
+for x in txt:
+    list_rectangles.append(x[:-1])
 
+root = Tk()
+root.title("Pozemky")
+root.resizable(False, False)
 
-def destroy_New_Toplevel():
-    global w
-    w.destroy()
-    w = None
+canvas = tk.Canvas(root, width=640, height=480, borderwidth=2, relief="solid")
+canvas.grid()
 
+for x in list_rectangles:
+    act_rec = x.split(' ')
+    act_rec = [int(x) for x in act_rec]
 
-class New_Toplevel:
-    def __init__(self, top=None):
-        '''This class configures and populates the toplevel window.
-           top is the toplevel containing window.'''
-        _bgcolor = '#d9d9d9'  # X11 color: 'gray85'
-        _fgcolor = '#000000'  # X11 color: 'black'
-        _compcolor = '#d9d9d9' # X11 color: 'gray85'
-        _ana1color = '#d9d9d9' # X11 color: 'gray85' 
-        _ana2color = '#d9d9d9' # X11 color: 'gray85' 
+    new_rectangle = Rectangle(canvas, act_rec)
+    print(new_rectangle)
 
-        top.geometry("901x818+529+144")
-        top.title("New Toplevel")
-        top.configure(height="580")
-        top.configure(highlightcolor="black")
-        top.configure(width="740")
-
-
-
-        self.can39 = Canvas(top)
-        self.can39.place(relx=0.11, rely=0.06, relheight=0.59, relwidth=0.72)
-        self.can39.configure(borderwidth="2")
-        self.can39.configure(relief=RIDGE)
-        self.can39.configure(selectbackground="#c4c4c4")
-        self.can39.configure(width=640)
-
-        self.Entry1 = Entry(top)
-        self.Entry1.place(relx=0.11, rely=0.67,height=41, relwidth=0.41)
-        self.Entry1.configure(background="white")
-        self.Entry1.configure(font="TkFixedFont")
-        self.Entry1.configure(selectbackground="#c4c4c4")
-
-        self.Button1 = Button(top)
-        self.Button1.place(relx=0.6, rely=0.67, height=37, width=197)
-        self.Button1.configure(activebackground="#d9d9d9")
-        self.Button1.configure(text='''Enter''')
-
-
-if __name__ == '__main__':
-    vp_start_gui()
+root.mainloop()
