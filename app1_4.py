@@ -1,11 +1,5 @@
-# sequence = input('vvjjsskK')
-sequence = 'vvjjsskK'
+sequence = input('vvjjsskK : ')
 list_final = []
-
-'''
-for x in range(int(len(sequence) / 2)):
-    print(sequence[x], ' ', sequence[-1 - x])
-'''
 
 list_of_letters = list(sequence)
 print(list_of_letters)
@@ -67,4 +61,5 @@ for _ in range(counter):
     list_of_letters.append(list_of_letters[0])
     del list_of_letters[0]
 
+print(list_final)
 print(len(list_final))
