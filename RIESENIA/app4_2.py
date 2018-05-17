@@ -50,5 +50,4 @@ set_size_button.grid(row=0, column=1)
 canvas = tk.Canvas(root, width=300, height=300, borderwidth=2, relief="solid")
 canvas.grid(row=1, column=0)
 
-
 root.mainloop()

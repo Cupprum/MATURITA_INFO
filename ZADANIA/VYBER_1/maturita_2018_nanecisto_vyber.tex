@@ -1,0 +1,295 @@
+\documentclass[a4paper,twoside,12pt]{report}
+%%%   preambula dokumentu   %%%
+
+\usepackage{epsfig}%,fancyhdr}
+\usepackage{amsfonts,amsmath,amsbsy,amssymb}
+\usepackage{latexsym}
+\usepackage{pdflscape,lscape,color,array}
+
+%%%\usepackage[latin2]{inputenc}
+%%%\usepackage[cp1250]{inputenc}
+\usepackage[utf8]{inputenc}
+
+
+%\addtolength{\hoffset}{-0.5cm}
+%\addtolength{\voffset}{-3cm}
+%\addtolength{\textwidth}{1cm}
+%\addtolength{\textheight}{3cm}
+%\addtolength{\footskip}{100pt}
+%\newenvironment{\du}[1]{%
+%{\unskip\smash{\lower 1.4ex\hbox{\char34}}\kern-.2ex}{#1}}%
+%\newenvironment{\hu}{%
+%\kern-.2ex\hbox{\char92}\ }%
+\newcommand{\du}{\unskip\smash{\lower 1.4ex\hbox{\char34}}\kern-.2ex}
+\newcommand{\hu}{\kern-.2ex\hbox{\char92}}
+
+
+%\newcommand\chapter{\pagestyle{headings}}
+%\pagestyle{fancy}
+%\oddsidemargin 1.25cm
+\oddsidemargin -0.5cm
+\evensidemargin -0.5cm
+\topmargin -2cm
+\textwidth 16cm
+\textheight 28.75cm
+\parindent 1.2cm
+\linespread{1}
+
+\setcounter{page}{1}
+
+\newcommand{\de}{\mathrm{d}}
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\II}{{\Pisane I}}
+\newcommand{\sign}{\mathrm{sign}}
+
+\newenvironment{Priklad}[1]{%
+
+\vskip 2mm
+
+\noindent{% Lava zatvorka
+\textsc{The Task {\texttt{#1.}}}
+}% Prava zatvorka
+
+\vskip -3mm
+
+\noindent{% Lava zatvorka
+%\hskip-12mm
+\rule{0.05\textwidth}{0.5mm} \
+\rule{0.05\textwidth}{0.5mm}
+}% Prava zatvorka
+
+\vskip 2mm
+
+}{}
+
+\newenvironment{Riesenie}{%
+\vskip 2mm
+\hskip-12mm\begin{tabular}{|l|}
+\textsc{The Solution.}
+\\
+\hline 
+\end{tabular}
+
+\vskip 1mm
+
+}{}
+
+\newenvironment{Task}{%
+\vskip 3mm
+\noindent{\framebox[1.1\width]
+{\textsc{Task.}}} \\ \vspace{1mm} }{}
+
+\newenvironment{Remark}{%
+\noindent{\Rem Remark.}
+
+\hskip-12mm\begin{tabular}{@{}p{\textwidth}@{}}
+\rule{\textwidth}{1mm}
+\vskip -4mm
+\begin{center}
+$\downarrow$
+\end{center}
+\vskip -2mm
+\end{tabular}}{%
+
+\hskip-12mm\begin{tabular}{@{}p{\textwidth}@{}}
+\vskip -2mm
+\begin{center}
+$\uparrow$
+\end{center}
+\vskip -4mm
+\rule{\textwidth}{1mm}
+\end{tabular}}
+
+\newenvironment{ViacRiadkov}{%
+\setlength\arraycolsep{2pt}\begin{eqnarray}}%
+{\end{eqnarray}}  
+% eqnarray ... pisanie formul na
+% viac ako jeden riadok, 3-stlpcova tabulka {rcl}, kazdy riadok
+%obdrzi vlastne odkazove cislo (cez eqnarray* alebo eqnarray \nonumber
+%sa potlaci toto oznacovanie), riadky sa oddeluju \\, v ramci riadku sa
+%miesta zarovnania oznacuju umiestnenim na dvoch miestach znaku & .
+
+\begin{document}
+
+\include{psfig.sty}
+\include{slovak.sty}
+
+
+%%%   telo dokumentu   %%%
+
+%%% 1.strana
+
+\
+\vskip -0.4cm
+
+%%%\begin{tabular}{|p{16cm}|}
+%%%\hline
+
+\noindent{% Lava Zatvorka
+\begin{itemize}
+\item[Zadanie č.1]
+
+\item[Úloha č.1]
+\begin{itemize}
+\item
+Prečítajte text uložený vo vstupnom súbore \ \du uloha\_1.txt\hu, obsahuje alfaznaky, medzere, viditeľný symbol ukončenia vety a riadiace znaky ukončenia riadku a súboru.
+\item
+Načítaný text je zakódovaný, poradie riadkov je obrátené. V druhom súbore \ \du maska\_1.txt\hu \ je uložená informácia o jeho rozkódovaní. Počet riadkov oboch súborov je rovnaký. Na príslušnom riadku masky sa nachádza poradové číslo riadku zo zakódovaného textu. Obsah riadku s poradovým čislom patrí na tento príslušný riadok.
+\\*
+Rozkódujte text a vypíšte alebo uložte ho na výstupe.
+\end{itemize}
+
+\item[Úloha č.2]
+- Zadefinujte pojmy archivácia údajov, pakovanie, kompresia údajov.
+
+\,- Sme pripojení k Internetu rýchlosťou 100kb/s. Koľko bajtov môžeme za ideálnych podmienok stiahnuť za jednu minútu? 
+\end{itemize}
+
+\begin{itemize}
+\item[Zadanie č.2]
+
+\item[Úloha č.1]
+\begin{itemize}
+\item
+Napíšte program, ktorý uskutoční $n$ opakovaní náhodného javu, hod 1 kockou. Hodnotu $n$ načítajte na vstupe. 
+\item
+Nechajte program vykonať $n$ pokusov. Výsledok jedného opakovania zakreslite do výkresu, v jeho strede bude kruh, do vnútra ktorého sa zapíše číslo, ktoré padlo na kocke.
+\item
+Program si zapamätá početnosť nastatia výsledkov $\{1,\cdots,6\}$ pri $n$ opakova\-niach hodu 1 kockou. Program vypíše alebo vykreslí po skončení $n$ pokusov histogram početností nastatia jednotlivých vysledkov. Napr.
+\\*
+1: *****
+
+2: *******
+
+\ldots
+
+6: **
+\end{itemize}
+
+\item[Úloha č.2]
+- Vymenujte prostredia, v ktorých môžete prehrávať najznámejšie formáty videí. Aké sú tie najznámejšie formáty? Čo je to \ \du Codec Pack\hu?
+
+\ - Aké poznáte prostredia, ktoré sa spoločne nazývajú prehľadávače? Vymenuj\-te aspoň niektoré, ktoré nazývame prehľadávače súborov, resp. prehľadávače webovských stránok.
+\end{itemize}
+\vspace{-1.0cm}
+\begin{itemize}
+\item[Zadanie č.3]
+
+\item[Úloha č.1]
+\begin{itemize}
+\item[]
+Napíšte program, ktorý vykreslí obrázok vo formáte \ \du bmp\hu, v 1-bitovej farebnej hĺbke, a zapíše ho ako textový súbor. 
+\item
+Nahrajte obrázok z grafického súboru \ \du uloha\_3.bmp\hu \ a vykreslite ho do výkresu.
+\item
+Do výstupného textového súboru zapíšte a uložte jeho zak\' odovan\' u prevrátenú podobu o 90$^\circ$ v smere hodinových ručičiek, pixel zafarben\' y \v ciernou farbou zastupuje znak \ \du c\hu, pixel zafarben\' y bielou farbou zastupuje znak \ \du b\hu.
+\\*
+Najprv, ale do 1.riadku s\' uboru oddelené medzerou vlo\v zte dve čísla, šírku a výšku obrázka;
+\end{itemize}
+
+\item[Úloha č.2]
+- Porovnajte tri najrozšírenejšie počítačové platformy z hľadiska použitého operačného systému.
+
+- Vymenujte aspoň tri bežne používané tzv. prezentačné aplikácie. Ako sa nazýva základná jednotka, do ktorej sa prezentácia vytvára, a z ktorej je celá prezentácia poskladaná?
+\end{itemize}
+}% Prava Zatvorka
+
+\newpage
+
+\noindent{% Lava Zatvorka
+\begin{itemize}
+\item[Zadanie č.4]
+
+\item[Úloha č.1]
+\begin{itemize}
+\item[]
+  Rozostavenie šachových figúrok rovnakej farby na vonkajšom riadku šachovnice.
+\item
+Na štandardnom vstupe načítajte počiatočné rozostavenie figúrok rovnakej farby na vonkaj\-šom riadku šachovnice v hre šachy (zľava doprava). Obe veže zastupujú znaky \ \du v\hu, oboch jazdcov znaky \ \du j\hu \ a strelcov \ \du s\hu, kráľa znak  \ \du k\hu \ a kráľovnú znak \ \du K\hu. Program si zapamätá túto počiatočnú postupnosť 8 znakov.  
+\item
+Rozšírte program tak, aby na štandardnom výstupe postupnosť vypísal v postavení od figúrok najďalej od stredu, až po figúrky k stredu najbližšie.
+\item
+Zistite celkový počet rôznych rozostavení našich 8 figúrok vedľa seba? Vypíšte ho na\,štandardnom\,výstupe.\,Použite\,hotovú\,procedúru \texttt{Najdi(j,Figurky,poc)}, s parametrami premenná \texttt{j} počet figúrok, \texttt{Figurky} reťazec obsahujúci počiatoč\-né rozostavenie figúrok, premenná \texttt{poc}, do ktorej sa spočítava počet rôznych rozostavení.
+\end{itemize}
+
+\item[Úloha č.2]
+- Vypočítajte: 121$_3$ + 12$_3$ = ?$_{10}$ (Počítajte v trojkovej sústave a výsledok preveďte do desiatkovej).
+
+- Čo rozumieme pod pojmom \ \du preplnenie elektronickej schránky\hu. Aké môžu byť prejavy tejto skutočnosti?
+\end{itemize}
+
+\begin{itemize}
+\item[Zadanie č.5]
+
+\item[Úloha č.1]
+\begin{itemize}
+\item[]
+ Z veľkej konštantnej vzorky ľudí aktívneho veku sa vytvorili náhodnými algoritmami opakovane rôzne skupiny obsahujúce minimálne 6 a maximálne 16 osôb. Pre jednu konkrétnu skupinu si jej členovia náhodne vytiahli číslo od 0 po 15, zabezpečilo sa, že každý dostal iné číslo. Nakoniec sa členovia tejto skupiny postavili vedľa seba podľa svojej výšky od \underbar{najmenšieho} po \underbar{najväčšieho} (predpokladáme, že neexistovali dvaja s rovnakou výškou). Úlohou je zistiť pre každú skupinu, vybratie čísel členmi skupiny a ich postavením vo vzťahu k výške, či sa výškové usporiadanie zhoduje s tým podľa priradených čísel.
+\item
+Vo vstupnom súbore \ \du uloha\_5.txt\hu \ máte uložené po jednom riadku informáciu pre skupinu, postavenie jej členov v rade od najmenšieho po najväčšieho v reči čísel, ktoré si vytiahli. Pre jednoduchosť sme zamenili čísla 10 až 15 znakmi \ \du a\hu \ až \ \du f\hu.     
+\item
+Napíšte program, ktorý načíta rad dlhý 6 až 16 znakov pre konkrétnu skupinu. Použite vhodný údajový typ.
+\item
+Vyšetrite v programe, v ktorej skupine usporiadané postavenie podľa výšky je aj usporiadané zoradenie zodpovedajúce vybratým číslam. Na výstupe vytlačte vstupný rad načítaný pre túto skupinu.
+\end{itemize}
+
+\item[Úloha č.2]
+- Vymenujte najznámejšie číselné sústavy požívané v informatike a situácie, kde sa s nimi stretnete.
+
+- Čo znamená \ \du Live distribúcia\hu \ operačného systému?
+\end{itemize}
+}% Prava Zatvorka
+
+\newpage
+
+\noindent{% Lava Zatvorka
+\begin{itemize}
+\item[Zadanie č.6]
+
+\item[Úloha č.1]
+\begin{itemize}
+\item[]
+V štvorcovej tabuľke o rozmere $n$ riadkov a stĺpcov, $n\in\{2,3,4,5\}$, sú rozmies\-tnené na jednotlivých poliach čísla od 1,\,\ldots,\,$n^2$-1 a jedno pole je prázdne obsahujúce číslo 0. 
+\item
+Vytvorte program, ktorý zo vstupného súboru \ \du uloha\_6.txt\hu \ pre jednu tabuľku z dvoch po sebe idúcich riadkov načíta: z prvého riadku hodnotu $n$ pre počet riadkov a stĺpcov tabuľky, z druhého postupne každé z $n^2$ čísel vrátane 0. Čísla sú v riadku oddelené medzerou.  
+\item
+Upravte program tak, aby načítané čísla sa vytlačili do čistej grafickej plochy v tvare tabuľky o $n$ riadkoch a $n$ stĺpcoch, a to nepárne čísla nezmenené, párne nahradené znakom \ \du *\hu.
+\end{itemize}
+
+\item[Úloha č.2]
+- Na príklade vysvetlite princíp Euklidovho algoritmu hľadania najväčšieho spoločného deliteľa dvoch prirodzených čísel.
+ 
+- Ako sa nazýva najznámejšie zariadenie, na ktorom sa informácia dá prechovávať v tzv. \ \du hardcopy\hu \ forme? Je vstupné alebo výstupné?
+\end{itemize}
+
+\begin{itemize}
+\item[Zadanie č.7]
+
+\item[Úloha č.1]
+\begin{itemize}
+\item[]
+Náhodné triafanie na cieľ.
+\item
+Zo vstupného súboru  \ \du uloha\_7.txt\hu \ načítajte údaje o geometrii pozemku a jeho zadefinovaní na výseku z mapy. Výsekom z mapy je grafická plocha o rozmeroch 640x480 pixlov. 
+Geometria pozemku pravouholník, daný 4 číslami (súradnice 2 vrcholov na hlavnej diagonále). Na samostatnom riadku sú údaje pre jeden pozemok, požadované súradnice vrcholov.
+\item
+Zakreslite pozemok do výseku nasledovným spôsobom: náhodne triafate na cieľ, ktorým je pozemok, náhodným výberom ľubovolného bodu so súradnicami $[x, y]$ ležiaceho na výseku z mapy. Ak trafíte do pozemku, zafarbite pixel na mieste $[x, y]$ zelenou farbou. Pri dostatočnom počte pokusov (volíte vy), je zafarbená plocha s veľkou pravdepodobnosťou blízka tej skutočnej.
+\item
+Vypočítajte približne výmeru každého načítaného pozemku pomocou geome\-trickej pravdepodobnosti. Náhodne triafate na cieľ, ktorým je pozemok, výbe\-rom ľubovolného bodu so súradnicami $[x, y]$ ležiaceho na výseku z mapy. Pri dostatočnom počte pokusov (volíte vy), je podiel počtu úspešných k počtu všetkých pokusov vynásobený výmerou výseku mapy približnou hodnotou plochy pozemku. Čo urobíte, ak trafíte jedno miesto viac ako jedenkrát?
+\end{itemize}
+
+\item[Úloha č.2]
+- Ktoré programy v prostredí OS Windows alebo OS Linux poskytujú pre užívateľa možnosť používať E-mail službu, tzv.  E-mail klienti? Vymenujte niektoré.
+
+- Vymenujte a stručne charakterizujte používaním akých služieb na internete najčastejšie dochádza k poskytovaniu osobných údajov (bez ohľadu na to či pravdivých alebo nie).
+\end{itemize}
+
+}% Prava Zatvorka
+
+%%%\noindent{% Lava Zatvorka
+%%%\textrm{Algoritmus m\' ate samostatne dodan\' y.}
+%%%}% Prava Zatvorka
+
+\end{document}
+
+

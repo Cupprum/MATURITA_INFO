@@ -1,0 +1,9 @@
+1_1{
+    a{
+        archivacia uddajov = zalohovanie dat = vytvaranie kopie dat pre potrebu obnovenia
+        lossy / lossless = /zip, rar, 7z, tar.gz, compress
+    }
+    b{
+        100kb/s = 12.5kB/s = 12 500 B/s = 750 000 B/m
+    }
+}

@@ -2,8 +2,7 @@ from tkinter import *
 
 root = Tk()
 
-
-txt = open("uloha_6.txt", "r").readlines()
+txt = open("../ZADANIA/VYBER_1/uloha_6.txt", "r").readlines()
 
 list_n = []
 list_of_nums = []
