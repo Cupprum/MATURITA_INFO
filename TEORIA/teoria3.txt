@@ -1,0 +1,26 @@
+3_1{
+    a{
+
+    }
+    b{
+        webovych stranok{
+            chrome,
+            mozzilla,
+        }
+        suborov{
+            nautilus,
+            Windows explorer,
+            Finder
+        }
+    }
+}
+
+3_2{
+    b{
+        Windows-1250,
+        utf_8,
+        utf_16,
+        utf_32,
+        ascii
+    }
+}
