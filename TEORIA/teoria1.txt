@@ -7,3 +7,111 @@
         100kb/s = 12.5kB/s = 12 500 B/s = 750 000 B/m
     }
 }
+
+1_2{
+    a{
+        {
+            VLC Media Player
+            MPV Player
+            Gnome Videos
+            Windows Media Player
+        }
+        {
+            pack codecov = mp3, mp4, mkv, avi, alac, flac...
+        }
+    }
+    b{
+        filebrowser{
+            GNOME Commander
+            Nautilus browser
+            Windows explorer
+            Finder
+        }
+        web browser{
+            mozzila,
+            chromium,
+            chrome,
+            IE,
+            edge,
+            opera,
+        }
+    }
+}
+
+1_3{
+    os{
+        unix{
+            Mac os
+            Linux
+        }
+        ms-doc{
+            windows
+        }
+    }
+    ppt{
+        powerpoint
+        libreoffice impress
+        open office
+        ???
+    }
+}
+
+1_4{
+    a{
+        121
+         12
+        ___
+        210 = 0*3^0 + 1*3^1 + 2*3^2 = 21
+        _______________________
+        121_3 + 12_3 = ?_10
+        121_3 = 1*3^0 + 2*3^1 + 1*3^2 = 1 + 6 + 9 = 16
+        12_3 = 2*3^0 + 1*3^1 = 2 + 3 = 5
+        16 + 5 = 21
+    }
+    b{
+        elektronicka schranka = email
+            kazdy ma zadany pocet B ktore moze zaplnit mailami,
+            neprima nove/ maze stare/ maze spam
+    }
+}
+
+1_5{
+    a{
+        dvojkova = binarna = 01
+            cely pocitac je natom postaveny (kladny = 1, zaporny = 0 el naboj)
+        
+        desiatkova = decimalna = 0123456789
+            uzivatelske prostredie
+        
+        sestnastkova = hexadecimalna = 0123456789ABCDEF 
+            farby
+    }
+    b{
+        Live CD = live distribúcia je OS uložený na bootovateľnom médiu, ktorý môže byť spustený bez inštalácie do HDD počítača
+    }
+}
+
+1_6{
+    a{
+        euclide_algorythm.py
+    }
+    b{
+        papier, vystupne
+    }
+}
+
+1_7{
+    a{
+        outlook
+        opera mail
+        mozzila thunderbird
+        evolution
+    }
+    b{
+        socialne siete,
+        email,
+        survey,
+        komentare,
+        prihlasenie sa na hocijaku stranku,
+    }
+}
