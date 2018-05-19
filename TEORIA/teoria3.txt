@@ -24,3 +24,59 @@
         ascii
     }
 }
+
+3_3{
+    a{
+        Počítačový vírus v oblasti počítačovej bezpečnosti označuje program alebo kód, ktorý sa dokáže sám šíriť bez vedomia používateľa
+        worms, trojans, browser hijackers, overwrite viruses
+        trojsky kon = program ktory okrem toho na co je urceny ma v sebe ukryty kod ktory pacha nejaku zlu cinnost
+    }
+    b{
+        Windows - Post
+        Linux - Evolution
+        internetovy prehliadac
+    }
+}
+
+3_4{
+    a{
+        hardware = fyzicka stranka pocitaca(vsetko co je hmotne)
+        Neumanova schema
+        CPU - procesor
+        GPU - graficka karta
+        MB - zakladna doska
+        RAM - pamat s priamym pristupom
+        HDD/SSD - pevne ulozisko
+    }
+    b{
+        socialne siete,
+        email,
+        survey,
+        komentare,
+        prihlasenie sa na hocijaku stranku,
+    }
+}
+
+3_5{
+    a{
+        zavesit na online ulozisko
+        lossless compression(zip)
+    }
+    b{
+        ovladac = driver;
+            je počítačový program, ktorý umožňuje komunikáciu operačného systému s hardvérovým zariadením.
+    }
+}
+
+3_6{
+    b{
+        plugins
+            chrome://components
+    }
+}
+
+3_7{
+    a{
+        pripojenia
+    }
+}
